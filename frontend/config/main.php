@@ -11,12 +11,23 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'modules' => [
+
+        'base' => [
+            'class' => \frontend\modules\base\Base::class,
+        ],
+//        'gii' => [
+//            'class' => \yii\gii\Module::className(),
+//            'allowedIPs' => ['*']
+//        ]
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'class' => \frontend\modules\base\components\UserComponent::class,
+            'identityClass' => \frontend\modules\base\models\Entity\User::class,
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
@@ -34,14 +45,16 @@ return [
             ],
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'home/error',
         ],
 
         'urlManager' => [
+            'class' => \yii\web\UrlManager::class,
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-            ],
+                '/' => 'base/home/index',
+            ]
         ],
 
     ],
