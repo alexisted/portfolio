@@ -2,6 +2,7 @@
 
 use Yii;
 use yii\db\ActiveRecord;
+use yii\filters\RateLimitInterface;
 use yii\web\IdentityInterface;
 
 class User extends ActiveRecord implements IdentityInterface
