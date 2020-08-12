@@ -8,8 +8,6 @@ $(document).ready(function () {
         }).done(function (data) {
             bootbox.dialog({
                 message: data,
-                closeButton: false,
-                backdrop: true,
                 onEscape: true,
             });
         });

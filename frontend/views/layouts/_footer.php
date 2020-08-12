@@ -6,7 +6,7 @@
                 <h4 class="text-uppercase mb-4">Контакты</h4>
                 <ul class="footer-list">
                     <li><i class="fas fa-phone-volume" style="font-size: 1.4rem;"></i><span>+37377726027</span></li>
-                    <li><i class="fas fa-at" style="font-size: 1.1.4rem;"></i><span>alexeitsurkan@gmail.com</span></li>
+                    <li><i class="fas fa-at" style="font-size: 1.4rem;"></i><span>alexeitsurkan@gmail.com</span></li>
                     <li><i class="fas fa-street-view" style="font-size: 1.4rem;"></i><span>Молдова Рыбница</span></li>
                 </ul>
             </div>
