@@ -1,7 +1,6 @@
 <?php namespace frontend\modules\base\controllers;
 
 use frontend\modules\base\models\Entity\Portfolio;
-use frontend\modules\base\models\Entity\User;
 use frontend\modules\base\models\Forms\MessageForm;
 use yii\web\Controller;
 
@@ -26,5 +25,13 @@ class HomeController extends Controller
             \Yii::$app->session->setFlash('success', 'Сообщение успешно отправлено!');
         }
         return $this->redirect(['index']);
+    }
+
+    public function actionPortfolio($id)
+    {
+        $data = Portfolio::findOne($id);
+        return $this->renderAjax('portfolio',[
+            'data' => $data
+        ]);
     }
 }

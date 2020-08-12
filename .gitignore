@@ -41,3 +41,6 @@ phpunit.phar
 /backend/web/index.php
 /backend/web/index-test.php
 /backend/web/robots.txt
+/package-lock.json
+/node_modules/
+/frontend/web/assets/

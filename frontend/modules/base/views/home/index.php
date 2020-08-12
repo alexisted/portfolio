@@ -1,8 +1,12 @@
 <?php
 
+use frontend\modules\base\assets\HomeBundle;
+
 /**
  * @var $portfolio
  */
+
+HomeBundle::register($this);
 ?>
 
 <!-- Masthead-->
@@ -35,17 +39,17 @@
         </div>
         <!-- Portfolio Grid Items-->
         <div class="row">
-            <?php foreach ($portfolio as $item):?>
-            <div class="col-md-6 col-lg-4 mb-5">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i
-                                    class="fas fa-plus fa-3x"></i></div>
+            <?php foreach ($portfolio as $item): ?>
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-id="<?=$item['id']?>">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i
+                                        class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="<?= $item['image'] ?>" alt=""/>
                     </div>
-                    <img class="img-fluid" src="<?=$item['image']?>" alt=""/>
                 </div>
-            </div>
-            <?php endforeach;?>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
@@ -86,4 +90,3 @@
         <?= $this->render('_contact_form.php') ?>
     </div>
 </section>
-

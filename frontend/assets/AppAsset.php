@@ -16,14 +16,11 @@ class AppAsset extends AssetBundle
     ];
 
     public $js = [
-        'js/mail/jqBootstrapValidation.js',
-        'js/mail/contact_me.js',
         'js/main.js',
     ];
 
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        \yii\web\YiiAsset::class,
         JQueryBundle::class,
         JQueryEasingBundle::class,
         BootstrapBundle::class,
