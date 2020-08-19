@@ -25,6 +25,9 @@ return [
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
+        'profile'=>[
+            'class' => \frontend\modules\base\components\ProfileComponent::class,
+        ],
         'user' => [
             'class' => \frontend\modules\base\components\UserComponent::class,
             'identityClass' => \frontend\modules\base\models\Entity\User::class,

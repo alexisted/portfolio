@@ -43,7 +43,7 @@ services:
       - internal
 
   db:
-    image: mysql:latest
+    image: mysql:5.7
     environment:
       - MYSQL_ROOT_PASSWORD=Z4SZX7PdXg
       - MYSQL_DATABASE=portfolio

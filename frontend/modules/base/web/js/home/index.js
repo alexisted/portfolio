@@ -9,6 +9,7 @@ $(document).ready(function () {
             bootbox.dialog({
                 message: data,
                 onEscape: true,
+                size: 'large',
             });
         });
     });

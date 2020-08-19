@@ -12,5 +12,10 @@ class Portfolio extends ActiveRecord
     {
         return '{{%portfolio}}';
     }
+
+    public function getPortfolioImages()
+    {
+        return $this->hasMany(PortfolioImage::class, ['portfolio_id' => 'id']);
+    }
 }
 

@@ -5,9 +5,9 @@
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">Контакты</h4>
                 <ul class="footer-list">
-                    <li><i class="fas fa-phone-volume" style="font-size: 1.4rem;"></i><span>+37377726027</span></li>
-                    <li><i class="fas fa-at" style="font-size: 1.4rem;"></i><span>alexeitsurkan@gmail.com</span></li>
-                    <li><i class="fas fa-street-view" style="font-size: 1.4rem;"></i><span>Молдова Рыбница</span></li>
+                    <li><i class="fas fa-phone-volume" style="font-size: 1.4rem;"></i><span><?=\Yii::$app->profile->phone?></span></li>
+                    <li><i class="fas fa-at" style="font-size: 1.4rem;"></i><span><?=\Yii::$app->profile->email?></span></li>
+                    <li><i class="fas fa-street-view" style="font-size: 1.4rem;"></i><span><?=\Yii::$app->profile->local?></span></li>
                 </ul>
             </div>
             <!-- Footer About Text-->
@@ -25,11 +25,11 @@
 <!-- Copyright Section-->
 <div class="copyright py-4 text-center text-white">
     <div class="container">
-        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-skype" style="font-size: 1.4rem;"></i></a>
-        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in" style="font-size: 1.4rem;"></i></a>
-        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f" style="font-size: 1.4rem;"></i></a>
-        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-telegram-plane" style="font-size: 1.4rem;"></i></a>
-        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-github-alt" style="font-size: 1.4rem;"></i></a>
+        <?php foreach(\Yii::$app->profile->soc as $item):?>
+            <a class="btn btn-outline-light btn-social mx-1" href="<?=$item['url']?>" target="_blank">
+                <i class="<?=$item['icon']?>" style="font-size: 1.4rem;"></i>
+            </a>
+        <?php endforeach;?>
     </div>
 </div>
 <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->

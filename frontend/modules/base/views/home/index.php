@@ -15,7 +15,7 @@ HomeBundle::register($this);
         <!-- Masthead Avatar Image-->
         <img class="masthead-avatar mb-5" src="/img/avataaars.svg" alt=""/>
         <!-- Masthead Heading-->
-        <h1 class="masthead-heading mb-0 lobster">Алексей Цуркан</h1>
+        <h1 class="masthead-heading mb-0 lobster"><?=\Yii::$app->profile->first_name?> <?=\Yii::$app->profile->last_name?></h1>
         <!-- Icon Divider-->
         <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
@@ -23,7 +23,7 @@ HomeBundle::register($this);
             <div class="divider-custom-line"></div>
         </div>
         <!-- Masthead Subheading-->
-        <p class="masthead-subheading font-weight-light mb-0">Full Stack Web Developer Средний (Middle)</p>
+        <p class="masthead-subheading font-weight-light mb-0"><?=\Yii::$app->profile->speciality?></p>
     </div>
 </header>
 <!-- Portfolio Section-->
@@ -66,12 +66,12 @@ HomeBundle::register($this);
         </div>
         <!-- About Section Content-->
         <div class="row">
-            <div class="col-lg-4 ml-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start
-                    Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as
-                    well as optional SASS stylesheets for easy customization.</p></div>
-            <div class="col-lg-4 mr-auto"><p class="lead">You can create your own custom avatar for the masthead, change
-                    the icon in the dividers, and add your email address to the contact form to make it fully
-                    functional!</p></div>
+            <div class="col-lg-12 ml-auto">
+                <p class="lead">
+                    <?=\Yii::$app->profile->about_me?>
+                </p>
+            </div>
+
         </div>
     </div>
 </section>

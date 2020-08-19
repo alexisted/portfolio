@@ -29,7 +29,11 @@ class HomeController extends Controller
 
     public function actionPortfolio($id)
     {
-        $data = Portfolio::findOne($id);
+        $data = Portfolio::find()
+            ->joinWith('portfolioImages')
+            ->where(['portfolio.id' => 1])
+            ->one();
+
         return $this->renderAjax('portfolio',[
             'data' => $data
         ]);
